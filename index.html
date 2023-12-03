@@ -13883,7 +13883,7 @@ div.form-header-group.hasImage {
 <span class="form-radio-item" style="clear:left">
 <span class="dragger-item">
 </span>
-<input type="radio" aria-describedby="label_15" class="form-radio" id="input_15_0" name="q15_procurementInvolvement" value="Yes">
+<input type="radio" aria-describedby="label_15" class="form-radio" id="input_15_0" name="q15_procurementInvolvement" value="Yes" checked >
 <label id="label_input_15_0" for="input_15_0">Yes</label>
 </span>
 <span class="form-radio-item" style="clear:left">
@@ -14086,7 +14086,7 @@ div.form-header-group.hasImage {
                 deadline: document.getElementById('lite_mode_12').value,
                 req_services: document.getElementById('input_10').value,
                 vendor: document.getElementById('input_20').value,
-                involvement: document.querySelector('input[name="q15_procurementInvolvement"]').value == "Yes" ? "Yes" : "No"
+                involvement: document.querySelector('input[name="q15_procurementInvolvement"]:checked').value == "Yes" ? "Yes" : "No"
             };
 
             sessionStorage.setItem('formData', JSON.stringify(formData));
