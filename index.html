@@ -13908,9 +13908,9 @@ div.form-header-group.hasImage {
 </div>
 <div class="form-description-arrow-small">
 </div>
-<div class="form-description-content">Yes, if:<br>The project is under the following categories - infrastructure, events, fixed assets.<br>or<br>The value of the project exceeds x.<br>or<br>The project includes sensitive information, requires signing an agreement or has a high profile.<br>
-<br>Otherwise, No.</div>
+
 </div>
+<label class="form-sub-label" for="input_16" id="sublabel_input_16" style="min-height:13px" aria-hidden="false">Yes, if:<br>The project is under the following categories - infrastructure, events, fixed assets.<br>or<br>The value of the project exceeds x.<br>or<br>The project includes sensitive information, requires signing an agreement or has a high profile.<br>Otherwise, No.</form>
 </li>
         <li class="form-line" data-type="control_textarea" id="id_16" style="z-index: 0;">
 <label class="form-label form-label-top form-label-auto" id="label_16" for="input_16" aria-hidden="false"> Project Background </label>
@@ -14009,6 +14009,18 @@ div.form-header-group.hasImage {
 <div class="form-description-content">Please list the items required for the project</div>
 </div>
 </li>
+
+<li class="form-line" data-type="control_textarea" id="id_10">
+    <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Required services/products </label>
+  <div id="textboxContainer">
+    <div class="textboxRow">
+      <input type="text" name="q10_requiredServicesproducts[]" id="input_1" class="form-textbox" placeholder="Type here...">
+      <button type="button" class="removeButton" onclick="removeTextbox(this)">Remove</button>
+    </div>
+  </div>
+  <button type="button" onclick="addTextbox()">Add Textbox</button>
+<li></li>
+
         <li class="form-line" data-type="control_textbox" id="id_20">
 <label class="form-label form-label-top form-label-auto" id="label_20" for="input_20" aria-hidden="false"> Recommended Vendor </label>
           <div id="cid_20" class="form-input-wide" data-layout="half">
