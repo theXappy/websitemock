@@ -13986,40 +13986,24 @@ div.form-header-group.hasImage {
 </div>
 <span class="form-sub-label-container" style="vertical-align:top">
 <input type="text" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_12" size="12" data-maxlength="12" data-age="" value="12-03-2023" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autocomplete="off" aria-labelledby="label_12 sublabel_12_litemode" inputmode="numeric">
-<img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_12_pick" src="/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2">
+<img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_12_pick" src="/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" style="visibility: hidden;">
 <label class="form-sub-label" for="lite_mode_12" id="sublabel_12_litemode" style="min-height:13px" aria-hidden="false">Date</label>
 </span>
             </div>
           </div>
         </li>
-        <li class="form-line" data-type="control_textarea" id="id_10">
-<label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Required services/products </label>
-          <div id="cid_10" class="form-input-wide" data-layout="full">
-<span class="form-sub-label-container" style="vertical-align:top">
-<textarea id="input_10" class="form-textarea custom-hint-group form-custom-hint" name="q10_requiredServicesproducts" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_10 sublabel_input_10" data-customhint="Type here..." customhinted="true" placeholder="Type here..." spellcheck="false">
-</textarea>
-<label class="form-sub-label" for="input_10" id="sublabel_input_10" style="min-height:13px" aria-hidden="false">Please list the items required for the project</label>
-</span>
-</div>
-        <div class="form-description" style="display: none;">
-<div class="form-description-arrow">
-</div>
-<div class="form-description-arrow-small">
-</div>
-<div class="form-description-content">Please list the items required for the project</div>
-</div>
-</li>
-
 <li class="form-line" data-type="control_textarea" id="id_10">
     <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Required services/products </label>
-  <div id="textboxContainer" class="form-input-wide" data-layout="half">
+  <div id="textboxContainer" class="form-input-wide" data-layout="full">
     <div class="textboxRow">
       <input type="text" name="q10_requiredServicesproducts[]" id="input_1" class="form-textbox dynamic_service_list_item" placeholder="Type here...">
     </div>
         <button id="plusButton" type="button" onclick="addTextbox()" style="color: #e8f6fb;
         background: #4c72fb;border: white;height: 25px; margin-top: 3px;">Add</button>
   </div>
+  <label class="form-sub-label" for="input_10" id="sublabel_input_10" style="min-height:13px" aria-hidden="false">Please list the items required for the project</label>
 <li>
+    
 
 </li>
 
@@ -14136,6 +14120,7 @@ div.form-header-group.hasImage {
       newTextbox.type = 'text';
       newTextbox.name = 'q10_requiredServicesproducts[]';
       newTextbox.id = 'input_' + textboxCount;
+      newTextbox.style = "margin-top: 2px;"
       newTextbox.classList.add('form-textbox');
       newTextbox.classList.add('dynamic_service_list_item');
       newTextbox.placeholder = 'Type here...';
