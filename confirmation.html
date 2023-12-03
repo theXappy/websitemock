@@ -13847,7 +13847,7 @@ div.form-header-group.hasImage {
 </div>
               <div class="header-text httac htvam">
                 <h2 id="header_1" class="form-header" data-component="header">Confirmation</h2>
-                <div id="subHeader_1" class="form-subHeader">Thank you for choosing Orangada purchase request. We are a few small steps away from submitting the request.</div>
+                <div id="subHeader_1" class="form-subHeader">Thank you for choosing Orangada purchase request.<br>Your request has been submitted.</div>
               </div>
             </div>
           </div>
@@ -13910,7 +13910,13 @@ div.form-header-group.hasImage {
     <li class="form-line" data-type="control_button" id="id_2">
         <div id="cid_2" class="form-input-wide" data-layout="full">
           <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
-          <img id="tracker" src="tracker.png" width="640" class="header-logo-top">
+            <label id="tracker_label">Progress Tracker</label>
+            <div id="tracker">
+                <img id="tracker" src="tracker.png" width="640" class="header-logo-top">
+            </div>
+            <div id="message">
+                <label>Thank you for reaching out to procurement.<br>You are all set to go ahead.</label>
+            </div>
           </div>
       </li>
       <li style="display:none">Should be Empty: <input type="text" name="website" value="">
@@ -13932,6 +13938,9 @@ div.form-header-group.hasImage {
         document.getElementById('vendor').innerText = formData.vendor || '';
         document.getElementById('involvement').innerText = formData.involvement || '';
         if (formData.involvement == "Yes") {
+            document.getElementById('message').style.display = 'None';
+        }
+        else {
             document.getElementById('tracker').style.display = 'None';
         }
     </script>
