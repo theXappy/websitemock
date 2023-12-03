@@ -14012,14 +14012,16 @@ div.form-header-group.hasImage {
 
 <li class="form-line" data-type="control_textarea" id="id_10">
     <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Required services/products </label>
-  <div id="textboxContainer">
+  <div id="textboxContainer" class="form-input-wide" data-layout="half">
     <div class="textboxRow">
-      <input type="text" name="q10_requiredServicesproducts[]" id="input_1" class="form-textbox" placeholder="Type here...">
-      <button type="button" class="removeButton" onclick="removeTextbox(this)">Remove</button>
+      <input type="text" name="q10_requiredServicesproducts[]" id="input_1" class="form-textbox dynamic_service_list_item" placeholder="Type here...">
     </div>
+        <button id="plusButton" type="button" onclick="addTextbox()" style="color: #e8f6fb;
+        background: #4c72fb;border: white;height: 25px; margin-top: 3px;">Add</button>
   </div>
-  <button type="button" onclick="addTextbox()">Add Textbox</button>
-<li></li>
+<li>
+
+</li>
 
         <li class="form-line" data-type="control_textbox" id="id_20">
 <label class="form-label form-label-top form-label-auto" id="label_20" for="input_20" aria-hidden="false"> Recommended Vendor </label>
@@ -14105,15 +14107,52 @@ div.form-header-group.hasImage {
                 project_val: document.getElementById('input_18').value,
                 category: document.getElementById('input_19').value,
                 deadline: document.getElementById('lite_mode_12').value,
-                req_services: document.getElementById('input_10').value,
                 vendor: document.getElementById('input_20').value,
                 involvement: document.querySelector('input[name="q15_procurementInvolvement"]:checked').value == "Yes" ? "Yes" : "No"
             };
+
+            // Collect values from dynamically added textboxes into a single key
+            const dynamicTextboxes = document.querySelectorAll('.dynamic_service_list_item');
+            const joined_val = '\n * ' + Array.from(dynamicTextboxes).map(textbox => textbox.value).join('\n * ');
+            formData['req_services'] = joined_val;
 
             sessionStorage.setItem('formData', JSON.stringify(formData));
             this.submit();
         });
     </script>
+
+
+<script>
+    let textboxCount = 1;
+  
+    function addTextbox() {
+      textboxCount++;
+  
+      const container = document.getElementById('textboxContainer');
+      const newRow = document.createElement('div');
+      newRow.classList.add('textboxRow');
+  
+      const newTextbox = document.createElement('input');
+      newTextbox.type = 'text';
+      newTextbox.name = 'q10_requiredServicesproducts[]';
+      newTextbox.id = 'input_' + textboxCount;
+      newTextbox.classList.add('form-textbox');
+      newTextbox.classList.add('dynamic_service_list_item');
+      newTextbox.placeholder = 'Type here...';
+  
+      const plusButton = document.getElementById('plusButton');
+      plusButton.parentNode.removeChild(plusButton);
+
+      newRow.appendChild(newTextbox);
+      container.appendChild(newRow);
+      container.appendChild(plusButton);
+    }
+  
+    function removeTextbox(button) {
+      const row = button.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  </script>
 
 </body>
 </html>
